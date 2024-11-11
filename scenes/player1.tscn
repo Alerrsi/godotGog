@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://mhwhy1uan8ab"]
+[gd_scene load_steps=40 format=3 uid="uid://mhwhy1uan8ab"]
 
 [ext_resource type="Texture2D" uid="uid://dynocpxom0g8b" path="res://characters/Idle.png" id="1_6l2dj"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_tjtcs"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cgijxj3nrpbjy" path="res://characters/Attack.png" id="4_st46c"]
 [ext_resource type="Texture2D" uid="uid://gpb7ruqfhss" path="res://characters/Death.png" id="5_rsv2a"]
 [ext_resource type="Texture2D" uid="uid://bl6ki7r0pnfgw" path="res://characters/Hurt.png" id="6_2nvmv"]
+[ext_resource type="PackedScene" uid="uid://bksedh8qyd8vs" path="res://scenes/enemy_die.tscn" id="7_nhavy"]
 
 [sub_resource type="Animation" id="Animation_obc07"]
 resource_name = "Idle"
@@ -234,6 +235,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rm3hg"]
+size = Vector2(19, 2)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
@@ -265,3 +269,12 @@ limit_smoothed = true
 visible = false
 texture = ExtResource("1_6l2dj")
 hframes = 4
+
+[node name="enemy_die" parent="CharacterBody2D" instance=ExtResource("7_nhavy")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/enemy_die"]
+position = Vector2(-7.5, 30)
+shape = SubResource("RectangleShape2D_rm3hg")
+debug_color = Color(0.943272, 0.155032, 0.460435, 0.42)
+
+[connection signal="body_entered" from="CharacterBody2D/enemy_die" to="CharacterBody2D" method="_on_enemy_die_body_entered"]

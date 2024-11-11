@@ -2385,17 +2385,17 @@ limit_left = -1
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="EnemyCat" parent="enemies" instance=ExtResource("37_wmms1")]
+[node name="EnemyCat" parent="enemies" groups=["enemy"] instance=ExtResource("37_wmms1")]
 position = Vector2(25, -10)
 
-[node name="EnemyCat2" parent="enemies" instance=ExtResource("37_wmms1")]
+[node name="EnemyCat2" parent="enemies" groups=["enemy"] instance=ExtResource("37_wmms1")]
 position = Vector2(718, -249)
 
-[node name="EnemyCat3" parent="enemies" instance=ExtResource("37_wmms1")]
+[node name="EnemyCat3" parent="enemies" groups=["enemy"] instance=ExtResource("37_wmms1")]
 position = Vector2(722, -296)
 
-[node name="EnemyCat4" parent="enemies" instance=ExtResource("37_wmms1")]
+[node name="EnemyCat4" parent="enemies" groups=["enemy"] instance=ExtResource("37_wmms1")]
 position = Vector2(727, -345)
 
-[node name="EnemyCat5" parent="enemies" instance=ExtResource("37_wmms1")]
+[node name="EnemyCat5" parent="enemies" groups=["enemy"] instance=ExtResource("37_wmms1")]
 position = Vector2(687, -200)
