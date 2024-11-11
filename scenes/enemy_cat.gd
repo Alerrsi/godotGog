@@ -1,35 +1,37 @@
 extends CharacterBody2D
 
-const PigRun = 120
-const gravity = 98
 
-var player = null
+const SPEED = 100
+var direccion = 1
+@onready var ray_cast_2_derecha: RayCast2D = $RayCast2Derecha
+@onready var ray_cast_2_izquierda: RayCast2D = $RayCast2Izquierda
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _ready():
+	pass
 	
-	velocity.x = PigRun
-	$AnimatedSprite2D.play("Walk")
 
 func _physics_process(delta):
-	velocity.y += gravity
-	player = get_tree().get_nodes_in_group("player")[0]
+	
+	if not velocity.x:
+		animated_sprite_2d.play("Walk")
+		
 	if not is_on_floor():
+		print("flotando")
 		velocity.y += gravity * delta
-	
-	if is_on_wall():
-		# Invertir la dirección al chocar con una pared
-		velocity.x = -velocity.x
 		
-	if velocity.x < 0:
-		$AnimatedSprite2D.flip_h = true 	
-	elif velocity.x > 0:
-		$AnimatedSprite2D.flip_h = false
+	if ray_cast_2_derecha.is_colliding():
+		animated_sprite_2d.flip_h = true
+		direccion = -1
+	if ray_cast_2_izquierda.is_colliding():
+		animated_sprite_2d.flip_h = false
+		direccion = 1	
 		
-
-	# Mover al personaje con la velocidad actualizada
-	move_and_slide()
+	position.x += direccion * SPEED * delta
 	
-func follow():
-	if player !=null:
-		velocity = position.direction_to(player.position) * PigRun
+	
+	
+	
+	

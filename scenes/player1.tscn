@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://mhwhy1uan8ab"]
+[gd_scene load_steps=38 format=3 uid="uid://mhwhy1uan8ab"]
 
 [ext_resource type="Texture2D" uid="uid://dynocpxom0g8b" path="res://characters/Idle.png" id="1_6l2dj"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_tjtcs"]
@@ -31,7 +31,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ctp"]
-size = Vector2(31, 19)
+size = Vector2(27.5, 23.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_708xa"]
 atlas = ExtResource("1_6l2dj")
@@ -112,6 +112,22 @@ region = Rect2(0, 0, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_locys"]
 atlas = ExtResource("6_2nvmv")
 region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n65ct"]
+atlas = ExtResource("2_oiycv")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyhdi"]
+atlas = ExtResource("2_oiycv")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rftjb"]
+atlas = ExtResource("2_oiycv")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnfj0"]
+atlas = ExtResource("2_oiycv")
+region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tfycc"]
 animations = [{
@@ -199,11 +215,29 @@ animations = [{
 "loop": true,
 "name": &"hurt",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n65ct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyhdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rftjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnfj0")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D" groups=["player"]]
+[node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+collision_mask = 3
 script = ExtResource("1_tjtcs")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
@@ -212,15 +246,20 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-5, 15)
+position = Vector2(-6.75, 17.25)
 shape = SubResource("RectangleShape2D_t3ctp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(-3, 5)
 sprite_frames = SubResource("SpriteFrames_tfycc")
-animation = &"attack"
+animation = &"jump"
+frame = 2
+frame_progress = 0.898309
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(3, 3)
+limit_bottom = 120
+limit_smoothed = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 visible = false

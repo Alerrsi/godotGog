@@ -4,7 +4,7 @@ var is_attacking = false
 # verlocidad de personaje
 var moveSpeed = 100
 # velocidad de salto 
-var jumpSpeed = 300
+var jumpSpeed = 250
 # lugar al cual mida el personaje
 var faceSide = true
 # valor de gravedad del proyecto
@@ -15,10 +15,14 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var tilemap = $"../World/TileMap"
 var dangerTile = 32
 
+@onready var muerte = $zonaMuerte
+
 
 
 
 func _physics_process(delta: float) -> void:
+	
+	
 	
 	if Input.is_action_just_pressed("attack") and velocity.x == 0 and not is_attacking:
 		animations.play("attack")
@@ -42,10 +46,10 @@ func _physics_process(delta: float) -> void:
 	
 
 func updateAnimations():
-	if velocity.x and not is_attacking: 
+	if velocity.x and not is_attacking and is_on_floor(): 
 		animations.play("Walk")
 		
-	elif not is_attacking:
+	elif not is_attacking and is_on_floor():
 		animations.play("Idle")
 		
 		
@@ -64,9 +68,11 @@ func side():
 func jump(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = -jumpSpeed
+		animations.play("jump")
 		
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		animations.play("jump")
 		
 		
 func die():
