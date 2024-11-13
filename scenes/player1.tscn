@@ -32,7 +32,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ctp"]
-size = Vector2(27.5, 23.5)
+size = Vector2(35, 23.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_708xa"]
 atlas = ExtResource("1_6l2dj")
@@ -250,15 +250,15 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-6.75, 17.25)
+position = Vector2(-5.5, 17.25)
 shape = SubResource("RectangleShape2D_t3ctp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(-3, 5)
 sprite_frames = SubResource("SpriteFrames_tfycc")
-animation = &"jump"
-frame = 2
-frame_progress = 0.898309
+animation = &"attack"
+frame = 3
+frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(3, 3)
