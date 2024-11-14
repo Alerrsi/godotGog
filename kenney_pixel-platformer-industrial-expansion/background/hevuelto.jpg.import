@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dghdb3trs25ay"
-path="res://.godot/imported/meme.png-0000d8c6724d7ac2f4534ea40b1e020a.ctex"
+uid="uid://c42le8kdjfive"
+path="res://.godot/imported/hevuelto.jpg-752fa4dda17f0b328841911cc9e06225.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://kenney_pixel-platformer-industrial-expansion/Tiles/meme.png"
-dest_files=["res://.godot/imported/meme.png-0000d8c6724d7ac2f4534ea40b1e020a.ctex"]
+source_file="res://kenney_pixel-platformer-industrial-expansion/background/hevuelto.jpg"
+dest_files=["res://.godot/imported/hevuelto.jpg-752fa4dda17f0b328841911cc9e06225.ctex"]
 
 [params]
 

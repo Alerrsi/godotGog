@@ -32,7 +32,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ctp"]
-size = Vector2(35, 23.5)
+size = Vector2(19, 21.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_708xa"]
 atlas = ExtResource("1_6l2dj")
@@ -250,7 +250,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-5.5, 17.25)
+position = Vector2(-6.5, 16.25)
 shape = SubResource("RectangleShape2D_t3ctp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
