@@ -89,4 +89,13 @@ func check_for_danger():
 	if tilemap.get_cellv(tile_pos) == dangerTile:
 		die()  # Llamar a la función de muerte
 		
+		
 	
+	
+
+
+func _on_enemy_die_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
+		body.queue_free()
+		
+		
