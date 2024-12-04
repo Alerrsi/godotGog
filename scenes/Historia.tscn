@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://da7ysg1hvtbc0"]
+
+[ext_resource type="Script" path="res://scenes/historia.gd" id="1_8bauq"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -571.0
+offset_top = -324.0
+offset_right = 571.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8bauq")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 25.0
+offset_right = 1133.0
+offset_bottom = 638.0
+text = "Es un día oscuro en la historia. El Imperio Faunus ha puesto sus miras en el planeta Calis en busca del todopoderoso artefacto \"Lupus,\" que se rumorea es una fuente de poder de escala infinita. Tu ciudad, la humilde DogTown, ha sido la encargada de resguardar las dos piezas que juntas forman el legendario artefacto. Tu misión, como el Escudero de Lupus, es obtener las dos piezas que conforman el artefacto y protegerlo del enemigo. Pero ten cuidado, no eres invencible. Un solo toque del enemigo es suficiente para acabar con tu mision.  Buena suerte."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+clip_text = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 502.0
+offset_top = 541.0
+offset_right = 672.0
+offset_bottom = 572.0
+text = "Empezar Juego
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

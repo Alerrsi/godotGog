@@ -43,7 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://brn6q6nffcosy" path="res://kenney_pixel-platformer-industrial-expansion/Sample.png" id="35_4j3st"]
 [ext_resource type="Texture2D" uid="uid://dn674284jw06s" path="res://kenney_pixel-platformer-industrial-expansion/tilemap.png" id="36_w8e5g"]
 [ext_resource type="PackedScene" uid="uid://dfq6r46oubdgk" path="res://scenes/enemy_cat.tscn" id="37_wmms1"]
-[ext_resource type="PackedScene" uid="uid://b5s2u4dtx3qim" path="res://scenes/zona_muerte.tscn" id="44_rhoad"]
+[ext_resource type="PackedScene" path="res://scenes/zona_muerte.tscn" id="44_rhoad"]
 [ext_resource type="AudioStream" uid="uid://cjoqcdq0x6tbs" path="res://audio/Nova_Nostalgia(1).mp3" id="45_5aiwv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pdpkg"]
