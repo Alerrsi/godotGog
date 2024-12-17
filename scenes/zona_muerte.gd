@@ -4,10 +4,8 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		print("¡Muerto!")
 		Engine.time_scale = 0.5
-		
-		body.call("die")  # Llama a la función "die" del jugador o enemigo
+		body.call("die")  
 		timer.start()
 
 func _on_timer_timeout() -> void:

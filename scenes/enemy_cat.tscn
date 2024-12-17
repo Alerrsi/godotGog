@@ -195,7 +195,7 @@ volume_db = 16.289
 position = Vector2(5, -14)
 scale = Vector2(0.958333, 1)
 sprite_frames = SubResource("SpriteFrames_rsr5c")
-animation = &"hurt"
+animation = &"attack"
 
 [node name="Node2D" type="Node2D" parent="."]
 

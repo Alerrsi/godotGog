@@ -62,7 +62,7 @@ func jump(delta):
 		animations.play("jump")
 
 func die() -> void:
-	print("¡El personaje ha muerto!")
+	
 	is_dying = true  
 	animations.play("die")
 	animations.connect("animation_finished", Callable(self, "_on_die_animation_finished"))
@@ -71,7 +71,7 @@ func die() -> void:
 func _on_die_animation_finished():
 	# Disconnect the signal to avoid duplicate connections
 	animations.disconnect("animation_finished", Callable(self, "_on_die_animation_finished"))
-	print("Death animation finished")
+	
 	
 func _on_enemy_die_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):

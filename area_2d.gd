@@ -6,6 +6,5 @@ extends Area2D
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
-		print("Key collected! Transitioning to the next scene...")
 		sprite.visible = false  # Hide the key sprite
 		get_tree().change_scene_to_file("res://scenes/Victoria.tscn")
