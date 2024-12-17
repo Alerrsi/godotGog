@@ -3317,7 +3317,7 @@ autoplay = true
 bus = &"Musica"
 
 [node name="player" parent="." instance=ExtResource("8_gu67i")]
-position = Vector2(2684, -528)
+position = Vector2(118, -38)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(256, -6)
@@ -3362,7 +3362,7 @@ position = Vector2(637, -197)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("45_5aiwv")
-volume_db = 1.005
+volume_db = -80.0
 autoplay = true
 max_distance = 10060.0
 

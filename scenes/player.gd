@@ -12,6 +12,8 @@ var is_dying = false
 func _ready() -> void:
 	add_to_group("player")
 
+@onready var attack_sound = $AudioStreamPlayer
+
 func _physics_process(delta: float) -> void:
 	if is_dying:
 		return 
@@ -19,6 +21,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("attack") and velocity.x == 0 and not is_attacking:
 		animations.play("attack")
 		is_attacking = true
+		attack_sound.play()  
 
 	if is_attacking and not animations.is_playing():
 		is_attacking = false

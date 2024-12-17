@@ -1,8 +1,9 @@
-[gd_scene load_steps=40 format=3 uid="uid://mhwhy1uan8ab"]
+[gd_scene load_steps=41 format=3 uid="uid://mhwhy1uan8ab"]
 
 [ext_resource type="Texture2D" uid="uid://dynocpxom0g8b" path="res://characters/Idle.png" id="1_6l2dj"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_tjtcs"]
 [ext_resource type="Texture2D" uid="uid://dxngosewrs1w3" path="res://characters/Walk.png" id="2_oiycv"]
+[ext_resource type="AudioStream" uid="uid://dbemb11ggy1ur" path="res://audio/Perro Ladrando - Efecto de sonido (mp3cut.net).mp3" id="2_xtqis"]
 [ext_resource type="Texture2D" uid="uid://cgijxj3nrpbjy" path="res://characters/Attack.png" id="4_st46c"]
 [ext_resource type="Texture2D" uid="uid://gpb7ruqfhss" path="res://characters/Death.png" id="5_rsv2a"]
 [ext_resource type="Texture2D" uid="uid://bl6ki7r0pnfgw" path="res://characters/Hurt.png" id="6_2nvmv"]
@@ -243,6 +244,10 @@ size = Vector2(19, 2)
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
 collision_mask = 3
 script = ExtResource("1_tjtcs")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CharacterBody2D"]
+stream = ExtResource("2_xtqis")
+volume_db = 13.206
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
 libraries = {
