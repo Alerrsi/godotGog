@@ -256,9 +256,8 @@ shape = SubResource("RectangleShape2D_t3ctp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(-3, 5)
 sprite_frames = SubResource("SpriteFrames_tfycc")
-animation = &"attack"
-frame = 3
-frame_progress = 1.0
+animation = &"die"
+frame_progress = 0.428701
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(3, 3)
@@ -273,7 +272,7 @@ hframes = 4
 [node name="enemy_die" parent="CharacterBody2D" instance=ExtResource("7_nhavy")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/enemy_die"]
-position = Vector2(-7.5, 30)
+position = Vector2(18, 27)
 shape = SubResource("RectangleShape2D_rm3hg")
 debug_color = Color(0.943272, 0.155032, 0.460435, 0.42)
 

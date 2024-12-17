@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://db38ba18ob2r6"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_trf8i"]
+[ext_resource type="Texture2D" uid="uid://6ll12v5akvw3" path="res://kenney_pixel-platformer-industrial-expansion/background/3.png" id="2_jf5jn"]
+[ext_resource type="Texture2D" uid="uid://bemewdwo20cnd" path="res://kenney_pixel-platformer-industrial-expansion/background/1.png" id="5_r0umg"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_trf8i")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -574.0
+offset_top = -322.0
+offset_right = 575.0
+offset_bottom = 333.0
+text = "Es un día oscuro en la historia. El Imperio Felix ha puesto sus miras en el planeta Calis en busca del todopoderoso artefacto \"Lupus,\" que se rumorea es una fuente de poder de escala infinita. Tu ciudad, la humilde DogTown, ha sido la encargada de resguardar las dos piezas que juntas forman el legendario artefacto. Tu misión, como el Escudero de Lupus, es obtener las dos piezas que conforman el artefacto y protegerlo del enemigo. Pero ten cuidado, no eres invencible. Un solo toque del enemigo es suficiente para acabar con tu mision.  Buena suerte."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -64.0
+offset_top = 103.0
+offset_right = 80.0
+offset_bottom = 139.0
+text = "Empezar Juego"
+
+[node name="1" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(-56, 86)
+scale = Vector2(6.26736, 5.69753)
+texture = ExtResource("5_r0umg")
+
+[node name="3" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(-287, 167)
+texture = ExtResource("2_jf5jn")
+
+[node name="4" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(289, 167)
+texture = ExtResource("2_jf5jn")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

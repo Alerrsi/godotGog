@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="perros"
-run/main_scene="res://scenes/world.tscn"
+run/main_scene="res://scenes/control.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [global_group]
 
