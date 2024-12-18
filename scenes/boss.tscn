@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://beu65o2xlbhfk" path="res://characters/3 Cat/Idle.png" id="4_rq5o1"]
 [ext_resource type="Texture2D" uid="uid://dt3m5eip0m43j" path="res://characters/3 Cat/Walk.png" id="5_is3tg"]
 [ext_resource type="Script" path="res://scenes/die.gd" id="7_bsuvf"]
+[ext_resource type="PackedScene" uid="uid://b5s2u4dtx3qim" path="res://scenes/zona_muerte.tscn" id="8_36veq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xm8o6"]
 atlas = ExtResource("1_m8o8g")
@@ -179,11 +180,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nag6i"]
 size = Vector2(26.5, 17)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmovh"]
-size = Vector2(19, 2)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xl62"]
-size = Vector2(23.5, 2)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep4fy"]
+size = Vector2(36, 18)
 
 [node name="Boss" type="CharacterBody2D"]
 script = ExtResource("1_dr045")
@@ -197,28 +195,27 @@ frame = 1
 frame_progress = 0.534058
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(4, 0.5)
+position = Vector2(5, 1)
 shape = SubResource("RectangleShape2D_nag6i")
 
 [node name="RayCast2Derecha" type="RayCast2D" parent="."]
-target_position = Vector2(9, 0)
+target_position = Vector2(27, 4)
 
 [node name="RayCast2Izquierda" type="RayCast2D" parent="."]
-target_position = Vector2(-14, 0)
+target_position = Vector2(-18, 5)
 
 [node name="RayCast2Arriba" type="RayCast2D" parent="."]
 target_position = Vector2(0, -11)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7)
-shape = SubResource("RectangleShape2D_bmovh")
-
 [node name="die" type="Area2D" parent="."]
 script = ExtResource("7_bsuvf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="die"]
-position = Vector2(4, 11)
-shape = SubResource("RectangleShape2D_4xl62")
-debug_color = Color(0.966468, 1.92523e-07, 0.480345, 0.42)
+[node name="zonaMuerte" parent="." instance=ExtResource("8_36veq")]
+position = Vector2(-1, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zonaMuerte" groups=["boss", "enemy"]]
+position = Vector2(5, 6)
+shape = SubResource("RectangleShape2D_ep4fy")
+debug_color = Color(0.550343, 0, 0.0799253, 0.419608)
 
 [connection signal="body_entered" from="die" to="die" method="_on_body_entered"]

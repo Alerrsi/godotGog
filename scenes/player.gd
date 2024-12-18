@@ -72,7 +72,19 @@ func _on_die_animation_finished():
 	# Disconnect the signal to avoid duplicate connections
 	animations.disconnect("animation_finished", Callable(self, "_on_die_animation_finished"))
 	
-	
+var boss_hit_count: int = 0
+
 func _on_enemy_die_body_entered(body: Node2D) -> void:
+	
+	print(body.get_groups())
 	if body.is_in_group("enemy"):
+		
 		body.queue_free()
+	if body.is_in_group("boss"):
+		boss_hit_count += 1  # Incrementar el contador
+		print(boss_hit_count)
+		
+		# Verificar si se ha tocado 3 veces
+		if boss_hit_count >= 3:
+			body.queue_free()  # Eliminar al boss
+			boss_hit_count = 0  # Reiniciar el contador (opcional)

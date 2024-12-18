@@ -237,7 +237,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rm3hg"]
-size = Vector2(19, 2)
+size = Vector2(19, 5)
 
 [node name="Node2D" type="Node2D"]
 
@@ -277,7 +277,7 @@ hframes = 4
 [node name="enemy_die" parent="CharacterBody2D" instance=ExtResource("7_nhavy")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/enemy_die"]
-position = Vector2(18, 27)
+position = Vector2(18, 28.5)
 shape = SubResource("RectangleShape2D_rm3hg")
 debug_color = Color(0.943272, 0.155032, 0.460435, 0.42)
 

@@ -23,6 +23,7 @@ window/stretch/mode="viewport"
 
 player=""
 enemy=""
+boss=""
 
 [input]
 
